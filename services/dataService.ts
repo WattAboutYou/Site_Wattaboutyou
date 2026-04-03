@@ -11,7 +11,8 @@ export const initData = async () => {
     if (isDataLoaded) return;
     try {
         console.log("Loading dataset...");
-        const res = await fetch('/light_data.json');
+        // @ts-ignore
+        const res = await fetch(`${import.meta.env.BASE_URL}light_data.json`);
         const data = await res.json();
         
         REAL_DB = {};
